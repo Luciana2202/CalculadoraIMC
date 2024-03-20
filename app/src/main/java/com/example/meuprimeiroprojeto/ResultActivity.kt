@@ -1,53 +1,53 @@
 package com.example.meuprimeiroprojeto
 
+
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import android.widget.TextView
+import androidx.core.content.ContextCompat
+
+const val KEY_RESULT_IMC = "ResultActivity.KEY_IMC"
 
 class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-        supportActionBar?.setHomeButtonEnabled(true)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val result = intent.getFloatExtra("KEY_RESULT_IMC", 0f)
 
-        val tvResult = findViewById<TextView>(R.id.textview_result)
-        val tvClassificacao = findViewById<TextView>(R.id.textview_classificacao)
-
-        val result = intent.getFloatExtra("EXTRA_RESULT", 0.1f)
+        val tvResult = findViewById<TextView>(R.id.tv_result)
+        val tvClassificacao = findViewById<TextView>(R.id.tv_classificação)
 
         tvResult.text = result.toString()
 
-        /* TABELA IMC
-           MENOR QUE 18,5    ABAIXO DO PESO 0
-           ENTRE 18,5 E 24,9 NORMAL         0
-           ENTRE 25,0 E 29,9 SOBREPESO      I
-           ENTRE 30,0 E 39,9 SOBREPESO      II
-           MAIOR QUE 40,0    SOBREPESO      III
-         */
 
-        var classificacao = ""
-
-        if(result < 18.5f){
-            classificacao = "ABAIXO DO PESO"
-        }else if(result in 18.5f..24.9f){
-            classificacao = "NORMAL"
-        }else if(result in 25f..29.9f){
-            classificacao = "SOBREPESO"
-        }else if(result >= 30f && result <= 39.9f){
-            classificacao = "OBESIDADE"
-        }else if(result >= 40.0f){
-            classificacao = "OBESIDADE GRAVE"
+        val classificacao = if(result <= 18.5f){
+            "MAGREZA"
+        } else if(result > 18.5f && result <= 24.9f){
+            "NORMAL"
+        } else if (result > 25f && result <= 29.9f){
+            "SOBREPESO"
+        } else if(result > 30f && result <= 39.9f){
+            "OBESIDADE"
+        } else{
+            "OBESIDADE GRAVE"
         }
 
-        tvClassificacao.text = getString(R.string.message_classificacao, classificacao)
-    }
+        tvClassificacao.text = classificacao
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        finish()
-        return super.onOptionsItemSelected(item)
-    }
+        if (classificacao == "MAGREZA"){
+            tvClassificacao.setTextColor(ContextCompat.getColor(this, R.color.yellow))
+        } else if (classificacao == "NORMAL"){
+            tvClassificacao.setTextColor(ContextCompat.getColor(this,R.color.green))
+        } else if (classificacao == "SOBREPESO"){
+            tvClassificacao.setTextColor(ContextCompat.getColor(this,R.color.yellow))
+        } else if (classificacao == "OBESIDADE"){
+            tvClassificacao.setTextColor(ContextCompat.getColor(this,R.color.red))
+        } else {
+            tvClassificacao.setTextColor(ContextCompat.getColor(this,R.color.red))
+        }
 
+    }
 }
+
