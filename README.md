@@ -1,10 +1,11 @@
 # Calculadora IMC
 
-Calculadora de IMC foi um aplicativo que desenvolvi para dar meus primeiros passos com desenvolvimento Android. 
+Aplicativo Android Nativo desenvolvido com a linguagem de programação Kotlin. Cujo objetivo é realizar o calculo do IMC e mostrar o resultado na próxima tela. 
 
 ## :camera_flash: Screenshots
+<img src="https://github.com/Luciana2202/CalculadoraIMC/assets/105242092/23eb3905-4c9a-47ef-b52d-d2a5addab3bb" width=160/> <img src="https://github.com/Luciana2202/CalculadoraIMC/assets/105242092/92db6d59-f01d-4710-88de-1ddd676bb318" width=160/>
 
-<img src="/CalculadoraIMC/result/Screenshot_imctelainicial.png" width="260">&emsp;<img src="/CalculadoraIMC/result/Screenshot_imcteladados.png" width="260">&emsp;<img src="/CalculadoraIMC/result/Screenshot_telaimcresultado.png" width="260">&emsp;
+
 
 ## Tecnologias
 
