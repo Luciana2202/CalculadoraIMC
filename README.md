@@ -3,21 +3,21 @@
 Aplicativo Android Nativo desenvolvido com a linguagem de programação Kotlin. Cujo objetivo é realizar o calculo do IMC e mostrar o resultado na próxima tela. 
 
 ## :camera_flash: Screenshots
-<img src="https://github.com/Luciana2202/CalculadoraIMC/assets/105242092/23eb3905-4c9a-47ef-b52d-d2a5addab3bb" width=160/> <img src="https://github.com/Luciana2202/CalculadoraIMC/assets/105242092/92db6d59-f01d-4710-88de-1ddd676bb318" width=160/>
-
-
+<img src="https://github.com/Luciana2202/CalculadoraIMC/assets/105242092/23eb3905-4c9a-47ef-b52d-d2a5addab3bb" width=200/>          <img src="https://github.com/Luciana2202/CalculadoraIMC/assets/105242092/92db6d59-f01d-4710-88de-1ddd676bb318" width=200/>
 
 ## Tecnologias
 
-* Kotlin
+* Intent
 * Activity para host de telas
+* Snackbar
 * ViewGroup
-    - RelativeLayout
+    - ConstraintLayout
     - LinearLayout
-* Components de UI
+* Views
     - TextView
     - EditText
     - Button
+    - ImageView
 * Toast para display de mensagens
 * Intent Explicita para abrir a segunda Activity
 * FindViewById para recuperar components de UI
